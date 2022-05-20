@@ -1,16 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 import loginImg from '../../../assets/form-illus/Tablet login-rafiki.svg'
 import { useForm } from "react-hook-form";
 import auth from '../../../firebase.init';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [resetEmail, setResetEmail] = useState('')
+    const [sendPasswordResetEmail, sending, ResetError] = useSendPasswordResetEmail(
+        auth
+    );
+
     const [
         signInWithEmailAndPassword,
         user,
@@ -34,10 +40,23 @@ const Login = () => {
     if (error) {
         loginError = <p className='text-red-500'>{error?.message}</p>
     }
-    const onSubmit = data => {
+    const onSubmit = (data) => {
+        setResetEmail(data.email)
         signInWithEmailAndPassword(data.email, data.password)
-        console.log(data)
+
     };
+
+    const handleResetPass = async user => {
+
+        if (resetEmail) {
+            await sendPasswordResetEmail(resetEmail);
+            toast('Sent email');
+        }
+        else {
+            toast('Please Enter Your Email')
+        }
+    }
+
     return (
         <div className='loginContainer'>
 
@@ -51,6 +70,7 @@ const Login = () => {
                         <span className="label-text">Email</span>
                     </label>
                     <input
+                        name='email'
                         type="email"
                         placeholder="Type here"
                         className="input input-bordered input-primary w-full max-w-xs "
@@ -108,6 +128,8 @@ const Login = () => {
                         to='/register'>Create New Account
                     </Link></small>
                 </p>
+
+                <p>Forget Password ? <span onClick={handleResetPass}>Reset Password</span></p>
 
                 <SocialLogin></SocialLogin>
             </form>

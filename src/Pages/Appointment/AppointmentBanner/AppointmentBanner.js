@@ -2,7 +2,7 @@ import React from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import appointment from '../../../assets/images/chair.png'
-
+import './AppointmentBanner.css'
 const AppointmentBanner = ({ date, setDate }) => {
 
     return (
@@ -14,6 +14,13 @@ const AppointmentBanner = ({ date, setDate }) => {
                         <DayPicker mode="single"
                             selected={date}
                             onSelect={setDate}
+                            modifiersClassNames={{
+                                selected: 'my-selected',
+                                today: 'my-today'
+                            }}
+                            styles={{
+                                caption: { color: 'red' }
+                            }}
                         />
                     </div>
                 </div>

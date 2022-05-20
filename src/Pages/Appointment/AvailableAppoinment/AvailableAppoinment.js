@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AvailableAppoinment = ({ service, setTreatment }) => {
+const AvailableAppoinment = ({ service, setTreatment, }) => {
     const { name, slots } = service
     return (
         <div>
