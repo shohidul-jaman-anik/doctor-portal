@@ -7,11 +7,12 @@ import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { async } from '@firebase/util';
+import useToken from '../../Hook/useToken/useToken';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    
     const [
         createUserWithEmailAndPassword,
         user,
@@ -20,11 +21,17 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     let navigate = useNavigate();
 
-    useEffect(() => {
-        if (user) {
-            navigate('/');
-        }
-    }, [user,navigate])
+    const [token] = useToken(user)
+
+    // useEffect(() => {
+    //     if (user) {
+    //         navigate('/');
+    //     }
+    // }, [user, navigate])
+
+    if(token){
+        navigate('/appointment')
+    }
 
     if (loading || updating) {
         return <Loading></Loading>

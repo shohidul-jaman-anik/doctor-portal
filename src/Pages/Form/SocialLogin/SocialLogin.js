@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useToken from '../../Hook/useToken/useToken';
 import Loading from '../../Shared/Loading/Loading';
-// import auth from '../../../firebase.init';
+
 
 
 const SocialLogin = () => {
@@ -11,6 +12,8 @@ const SocialLogin = () => {
     let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
+
+    const [token] = useToken(user)
 
     useEffect(() => {
         if (user) {
