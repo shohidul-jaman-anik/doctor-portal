@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import MyAppointments from './MyAppointments/MyAppointments';
+import MyOrders from './MyOrders/MyOrders';
 
 const Dashboard = () => {
     return (
@@ -14,8 +16,11 @@ const Dashboard = () => {
                 <label for="dashboard-sidebar" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-50 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
-                    <li><Link to='/dashboard'>Sidebar Item 1</Link></li>
-                    <li><Link to="/dashboard/review">Sidebar Item 2</Link></li>
+                    <li><Link to="/dashboard">My Appointments</Link></li>
+                    <li><Link to="/dashboard/review">My Review</Link></li>
+                    {/* <li><Link  to="/dashboard/myOrders">My Orders</Link></li> */}
+                    <li><Link to="/dashboard/addDoctor">Add A Doctor</Link></li>
+
                 </ul>
             </div>
         </div>

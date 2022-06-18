@@ -5,25 +5,32 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 
-const BookingModal = ({ treatment, setTreatment, date ,refetch}) => {
+const BookingModal = ({ treatment, setTreatment, date, refetch }) => {
     const { _id, name, slots } = treatment;
     const [user, loading, error] = useAuthState(auth);
-    const treatmentDate = format(date, 'PP')
+    const formattedDate = format(date, 'PP')
     const handleForm = event => {
         event.preventDefault()
         const slot = event.target.slot.value;
         console.log(slot)
 
         const BookingData = {
+            // treatmentId: _id,
+            // treatment: name,
+            // date: treatmentDate,
+            // slot,
+            // userName: user.displayName,
+            // userEmail: user.email,
+            // phone: event.target.phone.value,
             treatmentId: _id,
             treatment: name,
-            date: treatmentDate,
+            date: formattedDate,
             slot,
-            userName: user.displayName,
-            userEmail: user.email,
-            phone: event.target.phone.value,
+            patient: user.email,
+            patientName: user.displayName,
+            phone: event.target.phone.value
         }
-        // console.log(BookingData)
+        console.log(BookingData)
 
         const url = "http://localhost:5000/booking"
         fetch(url, {
@@ -37,7 +44,7 @@ const BookingModal = ({ treatment, setTreatment, date ,refetch}) => {
             .then(data => {
                 console.log(data)
                 if (data.success) {
-                    toast(`Appointment is set , ${treatmentDate} at ${slot}`)
+                    toast(`Appointment is set , ${formattedDate} at ${slot}`)
                 }
                 else {
                     toast.error(`Already have an appintmnt on ${data.BookingData?.date} at ${data.BookingData?.slot}`)
@@ -54,7 +61,7 @@ const BookingModal = ({ treatment, setTreatment, date ,refetch}) => {
                     <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg text-secondary">Booking for: {name} !</h3>
                     <form onSubmit={handleForm} className='grid  grid-cols-1 gap-4 justify-items-center mt-4'>
-                        <input disabled type="text" value={treatmentDate} className="input input-bordered input-secondary w-full max-w-xs" />
+                        <input disabled type="text" value={formattedDate} className="input input-bordered input-secondary w-full max-w-xs" />
                         <select name="slot" className="select select-bordered select-secondary w-full max-w-xs">
                             {
                                 slots.map((slot, index) => <option
