@@ -25,7 +25,7 @@ const Navbar = () => {
             <button onClick={logout} className="btn btn-ghost">Log Out</button>
             : <Link to="/login" >Login</Link>}
         </li>
-        <li> <DarkMode></DarkMode></li>
+        {/* <li> <DarkMode></DarkMode></li> */}
     </>
     return (
 

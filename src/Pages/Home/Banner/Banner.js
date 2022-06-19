@@ -6,7 +6,7 @@ import PrimaryButton from '../../Shared/PrimaryButton/PrimaryButton';
 const Banner = () => {
     return (
         <div>
-            <div className="hero min-h-screen ">
+            <div className="hero my-16 ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={banner} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                     <div>

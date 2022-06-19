@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import MyAppointments from './MyAppointments/MyAppointments';
-import MyOrders from './MyOrders/MyOrders';
 
 const Dashboard = () => {
     return (
@@ -9,7 +8,7 @@ const Dashboard = () => {
             <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content">
                 {/* <!-- Page content here --> */}
-                <h1 className='text-3xl font-bold text-rose-500'>Welcome To Your Dahsborad</h1>
+                <h1 className='text-3xl font-bold text-primary'>Welcome To Your Dahsborad</h1>
                 <Outlet></Outlet>
             </div>
             <div class="drawer-side">
@@ -18,7 +17,7 @@ const Dashboard = () => {
                     {/* <!-- Sidebar content here --> */}
                     <li><Link to="/dashboard">My Appointments</Link></li>
                     <li><Link to="/dashboard/review">My Review</Link></li>
-                    {/* <li><Link  to="/dashboard/myOrders">My Orders</Link></li> */}
+                    <li><Link to="/dashboard/allUsers">All Users</Link></li>
                     <li><Link to="/dashboard/addDoctor">Add A Doctor</Link></li>
 
                 </ul>
