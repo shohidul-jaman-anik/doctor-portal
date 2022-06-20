@@ -15,7 +15,7 @@ const UserRow = ({ user, index, setUser, refetch }) => {
 
             })
     }
-
+ 
 
     const handleDelete = id => {
         console.log(id)

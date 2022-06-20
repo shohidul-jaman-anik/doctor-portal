@@ -17,6 +17,7 @@ import MyAppointments from './Pages/Dashboard/MyAppointments/MyAppointments';
 import MyReview from './Pages/Dashboard/MyReview/MyReview';
 import AddDoctor from './Pages/Dashboard/AddDoctor/AddDoctor';
 import AllUsers from './Pages/Dashboard/AllUsers/AllUsers';
+import RequireAdmin from './Pages/Form/RequireAdmin/RequireAdmin';
 
 function App() {
   return (
@@ -38,7 +39,9 @@ function App() {
           </RequireAuth>}>
           <Route index element={<MyAppointments></MyAppointments>}></Route>
           <Route path='addDoctor' element={<AddDoctor></AddDoctor>}></Route>
-          <Route path='allUsers' element={<AllUsers></AllUsers>}></Route>
+          <Route path='allUsers' element={<RequireAdmin>
+            <AllUsers></AllUsers>
+          </RequireAdmin>}></Route>
           <Route path='review' element={<MyReview></MyReview>}></Route>
        
         </Route>

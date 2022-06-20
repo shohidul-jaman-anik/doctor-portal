@@ -3,7 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import DarkMode from '../DarkMode/DarkMode';
+// import DarkMode from '../DarkMode/DarkMode';
 import './Navbar.css'
 
 const Navbar = () => {
@@ -15,7 +15,6 @@ const Navbar = () => {
     const menuItems = <>
         <li className='ml-24'><Link to="/" >Home</Link></li>
         <li><Link to="/appointment" >Appointment</Link></li>
-        <li><Link to="/review" >Review</Link></li>
         <li><Link to="/contact" >Contact</Link></li>
         <li><Link to="/about" >About</Link></li>
         {
