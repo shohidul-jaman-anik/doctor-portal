@@ -32,7 +32,7 @@ const BookingModal = ({ treatment, setTreatment, date, refetch }) => {
         }
         console.log(BookingData)
 
-        const url = "http://localhost:5000/booking"
+        const url = "https://afternoon-mesa-24247.herokuapp.com/booking"
         fetch(url, {
             method: "POST",
             headers: {

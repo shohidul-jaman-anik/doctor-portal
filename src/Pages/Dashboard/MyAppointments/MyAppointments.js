@@ -1,5 +1,5 @@
 
-import {Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -13,7 +13,7 @@ const MyAppointments = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/booking?patient=${user.email}`, {
+            fetch(`https://afternoon-mesa-24247.herokuapp.com/booking?patient=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -39,24 +39,24 @@ const MyAppointments = () => {
         return <Loading></Loading>
     }
     const handleDelete = id => {
-                console.log(id)
-                const proceed = window.confirm('Are you sure ?')
-        
-                if (proceed) {
-                    const url = `http://localhost:5000/booking/${id}`
-                    console.log(url)
-                    fetch(url, {
-                        method: "DELETE",
-                        body: JSON.stringify({ id })
-                    })
-                        .then(res => res.json())
-                        .then(data => {
-                            console.log(data)
-                            const remaining = appointments.filter(p => p._id !== id)
-                            setAppointments(remaining)
-                        })
-                }
-            }
+        console.log(id)
+        const proceed = window.confirm('Are you sure ?')
+
+        if (proceed) {
+            const url = `https://afternoon-mesa-24247.herokuapp.com/booking/${id}`
+            console.log(url)
+            fetch(url, {
+                method: "DELETE",
+                body: JSON.stringify({ id })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    const remaining = appointments.filter(p => p._id !== id)
+                    setAppointments(remaining)
+                })
+        }
+    }
 
     return (
         <div>
@@ -75,7 +75,7 @@ const MyAppointments = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    {
+                        {
                             appointments.map((a, index) => <tr>
                                 <th>{index + 1}</th>
                                 <td>{a.patientName}</td>
@@ -84,10 +84,10 @@ const MyAppointments = () => {
                                 <td>{a.treatment}</td>
                                 <td onClick={() => handleDelete(a._id)}> ❌ </td>
                                 <td>
-                               {(a.PPU && !a.paid)}&&<Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-sm'>💳</button></Link>
-                                 {(a.PPU && a.paid)}&&<span className='text-success'>Paid</span>
+                                    {(a.PPU && !a.paid)}&&<Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-sm'>💳</button></Link>
+                                    {(a.PPU && a.paid)}&&<span className='text-success'>Paid</span>
 
-                             </td>
+                                </td>
 
                             </tr>)
                         }

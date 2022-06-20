@@ -5,10 +5,10 @@ import UserRow from './UserRow';
 
 
 const AllUsers = () => {
-    const { data: users,setUser, isLoading ,refetch} = useQuery(['users'], () => fetch('http://localhost:5000/allUsers',{
-        method:"GET",
-        headers:{
-            authorization:`Bearer ${localStorage.getItem("accessToken")}`
+    const { data: users, setUser, isLoading, refetch } = useQuery(['users'], () => fetch('https://afternoon-mesa-24247.herokuapp.com/allUsers', {
+        method: "GET",
+        headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`
         }
     }).then(res => res.json()))
 
@@ -32,7 +32,7 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user,index) => <UserRow
+                            users.map((user, index) => <UserRow
                                 key={user._id}
                                 index={index}
                                 user={user}
