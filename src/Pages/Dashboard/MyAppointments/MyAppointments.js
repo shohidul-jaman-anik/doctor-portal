@@ -61,8 +61,8 @@ const MyAppointments = () => {
     return (
         <div>
             <h1>My appointment {appointments.length}</h1>
-            <div class="overflow-x-auto">
-                <table class="table table-zebra w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-zebra w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -84,8 +84,8 @@ const MyAppointments = () => {
                                 <td>{a.treatment}</td>
                                 <td onClick={() => handleDelete(a._id)}> ❌ </td>
                                 <td>
-                                    {(a.PPU && !a.paid)}&&<Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-sm'>💳</button></Link>
-                                    {(a.PPU && a.paid)}&&<span className='text-success'>Paid</span>
+                                    {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>Pay 💳</button></Link>}
+                                    {(a.price && a.paid) && <span className='text-success'>Paid ✔</span>}
 
                                 </td>
 

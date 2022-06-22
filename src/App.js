@@ -18,6 +18,8 @@ import MyReview from './Pages/Dashboard/MyReview/MyReview';
 import AddDoctor from './Pages/Dashboard/AddDoctor/AddDoctor';
 import AllUsers from './Pages/Dashboard/AllUsers/AllUsers';
 import RequireAdmin from './Pages/Form/RequireAdmin/RequireAdmin';
+import Payment from './Pages/Dashboard/Payment/Payment';
+import AddReview from './Pages/Review/AddReview/AddReview';
 
 function App() {
   return (
@@ -43,8 +45,11 @@ function App() {
             <AllUsers></AllUsers>
           </RequireAdmin>}></Route>
           <Route path='review' element={<MyReview></MyReview>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
        
         </Route>
+
+        <Route path='/reviews' element={<AddReview></AddReview>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>} ></Route>
       </Routes>

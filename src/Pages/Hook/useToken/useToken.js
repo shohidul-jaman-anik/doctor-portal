@@ -1,4 +1,7 @@
+import { loadStripe } from '@stripe/stripe-js';
 import React, { useEffect, useState } from 'react';
+
+
 
 const useToken = user => {
     const [token, setToken] = useState('');

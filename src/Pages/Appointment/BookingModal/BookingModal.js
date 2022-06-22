@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 
 const BookingModal = ({ treatment, setTreatment, date, refetch }) => {
-    const { _id, name, slots } = treatment;
+    const { _id, name, slots, price } = treatment;
     const [user, loading, error] = useAuthState(auth);
     const formattedDate = format(date, 'PP')
     const handleForm = event => {
@@ -26,6 +26,7 @@ const BookingModal = ({ treatment, setTreatment, date, refetch }) => {
             treatment: name,
             date: formattedDate,
             slot,
+            price,
             patient: user.email,
             patientName: user.displayName,
             phone: event.target.phone.value
@@ -58,7 +59,7 @@ const BookingModal = ({ treatment, setTreatment, date, refetch }) => {
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlhtmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg text-secondary">Booking for: {name} !</h3>
                     <form onSubmit={handleForm} className='grid  grid-cols-1 gap-4 justify-items-center mt-4'>
                         <input disabled type="text" value={formattedDate} className="input input-bordered input-secondary w-full max-w-xs" />

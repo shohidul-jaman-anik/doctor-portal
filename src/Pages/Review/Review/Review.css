@@ -1,0 +1,26 @@
+.student-info img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    padding-right: 5px;
+}
+
+.student-info {
+    display: flex;
+
+}
+
+.review-section {
+    padding: 5px;
+    width: 100%;
+}
+
+
+/*-----------------------------------
+ Services Responsive for tab device 
+ ------------------------------------*/
+/* @media only screen and (max-width: 600px) {
+    .review-main h4{
+        font-size: small;
+    }
+} */
