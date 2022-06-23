@@ -47,7 +47,7 @@ export default class PauseOnHover extends Component {
                 <Slider {...settings}>
                     <div className="slider-container">
                         <h3 className="slider-title">Dr. William A. Abdu, M.S.</h3>
-                        <p className="text-center text-secondary">Gynecologist</p>
+                        <p className="text-center text-secondary">Dental</p>
                         <img className="slider-img" src={img1} alt="" />
                     </div>
                     <div className="slider-container">

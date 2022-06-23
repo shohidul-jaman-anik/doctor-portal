@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import quotes from '../../../assets/icons/quote.svg'
 import person1 from '../../../assets/images/people1.png'
 import person2 from '../../../assets/images/people2.png'
 import person3 from '../../../assets/images/people3.png'
+import PrimaryButton from '../../Shared/PrimaryButton/PrimaryButton';
 import Review from '../Review/Review';
 
 
@@ -48,6 +50,10 @@ const Reviews = () => {
                         review={review}
                     ></Review>)
                 }
+                <PrimaryButton >
+                    <Link to="/reviews">Add Review</Link>
+                    
+                </PrimaryButton>
             </div>
         </div>
     );

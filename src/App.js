@@ -18,6 +18,7 @@ import AllUsers from './Pages/Dashboard/AllUsers/AllUsers';
 import RequireAdmin from './Pages/Form/RequireAdmin/RequireAdmin';
 import Payment from './Pages/Dashboard/Payment/Payment';
 import AddReview from './Pages/Review/AddReview/AddReview';
+import Contact from './Pages/Contact/Contact';
 
 function App() {
   return (
@@ -46,6 +47,8 @@ function App() {
         </Route>
 
         <Route path='/reviews' element={<AddReview></AddReview>}></Route>
+        <Route path='/contact' element={<Contact></Contact>}></Route>
+
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>} ></Route>
       </Routes>

@@ -107,7 +107,7 @@ const AddReview = () => {
                                 behavior="" direction=""> Share your thoughts with other customers
                             </marquee>
 
-                            <p className='p-2 shadow-sm text-center '>
+                            <p className='p-2 shadow-sm text-center text-2xl font-bold'>
                                 <Link to="/register">
                                     Write a coustomer review
                                 </Link>
@@ -119,6 +119,7 @@ const AddReview = () => {
             <div className='clint-review'>
 
                 <Reviews></Reviews>
+                
             </div>
         </div>
     );
