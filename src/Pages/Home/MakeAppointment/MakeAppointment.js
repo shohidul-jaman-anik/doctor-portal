@@ -8,11 +8,23 @@ const MakeAppointment = () => {
     return (
         <section style={{
             background: `url(${appointment})`
-        }} className='flex items-center mt-16 p-3' >
-            <div className='flex-1 hidden lg:block'>
+        }} className='flex items-center mt-16 ' >
+            <div
+                data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="800"
+
+                className='flex-1 hidden lg:block'>
                 <img className='mt-[-100px]' src={doctor} alt="" />
             </div>
-            <div className='flex-1'>
+            <div
+                data-aos="fade-left"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="800"
+
+                className='flex-1'>
                 <h3 className='font-bold text-primary'>Appointment</h3>
                 <h1 className='font-bold text-3xl text-white'>Make an appointment today </h1>
                 <p className='text-white'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia cupiditate iusto accusamus! Quaerat quam consequatur tempora nihil aperiam necessitatibus. Ipsa laborum recusandae inventore mollitia tempore, officiis ex fugiat maiores vero!</p>

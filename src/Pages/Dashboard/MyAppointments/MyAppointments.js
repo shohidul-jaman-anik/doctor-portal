@@ -60,7 +60,6 @@ const MyAppointments = () => {
 
     return (
         <div>
-            <h1>My appointment {appointments.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
                     <thead>
