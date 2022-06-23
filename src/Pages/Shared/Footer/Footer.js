@@ -7,7 +7,7 @@ const Footer = () => {
     // const currentDay = new Date().getDate();
     const together = [currentYear].join('/');
     return (
-        <footer className="text-center lg:text-left bg-gray-900 text-gray-600 mt-10">
+        <footer className="text-center lg:text-left bg-gray-800 text-gray-600 mt-10">
             <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
                 <div className="mr-12 hidden lg:block">
                     <span className="text-white">Get connected with us on social networks:</span>
@@ -177,7 +177,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="text-center p-6 bg-gray-900">
-                <span className='text-white'>© {currentYear} Copyright:</span>
+                <span className='text-white'>© {currentYear} Copyright :</span>
                 <Link className="text-secondary font-semibold ml-2" to="https://mypersonalportfolio-eebf9.web.app/">Shohidul Jaman Anik</Link>
             </div>
         </footer>

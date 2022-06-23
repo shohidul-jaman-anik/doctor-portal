@@ -5,4 +5,27 @@
     top: 0%;
     left: 0%;
     right: 0%;
+    bottom: 0%;
 }
+
+@media only screen and (max-width: 600px) {
+    .bannerImg{
+        background-image: url('../../../assets/Home/doctorBanner.png');
+        padding: 0.5rem 0.2rem;
+        background-color: black;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
+    }
+    .bannerDescription h1{
+       font-size: large;
+       margin: 0%;
+    }
+    .bannerDescription p{
+       font-size: small;
+       margin: 0%;
+    }
+}
+
+

@@ -47,32 +47,32 @@ export default class PauseOnHover extends Component {
                 <Slider {...settings}>
                     <div className="slider-container">
                         <h3 className="slider-title">Dr. William A. Abdu, M.S.</h3>
-                        <p className="text-center text-secondary">Dental</p>
+                        <p className="text-center text-secondary designation">Dental</p>
                         <img className="slider-img" src={img1} alt="" />
                     </div>
                     <div className="slider-container">
                         <h3 className="slider-title">Dr. Myles. B. Abbott, M.D</h3>
-                        <p className="text-center text-secondary">Gynecologist</p>
+                        <p className="text-center text-secondary designation">Gynecologist</p>
                         <img className="slider-img" src={img2} alt="" />
                     </div>
                     <div className="slider-container">
                         <h3 className="slider-title">Dr. Fouad. M. Abbas, M.D.</h3>
-                        <p className="text-center text-secondary">Physiotherapyest</p>
+                        <p className="text-center text-secondary designation">Physiotherapyest</p>
                         <img className="slider-img" src={img3} alt="" />
                     </div>
                     <div className="slider-container">
                         <h3 className="slider-title">Dr. Mona.M.Abaza, M.D.</h3>
-                        <p className="text-center text-secondary">Orthopedics</p>
+                        <p className="text-center text-secondary designation">Orthopedics</p>
                         <img className="slider-img" src={img4} alt="" />
                     </div>
                     <div className="slider-container">
                         <h3 className="slider-title">Dr. Khalid Abbed, M.D.</h3>
-                        <p className="text-center text-secondary">Neurology & Neurosurgery</p>
+                        <p className="text-center text-secondary designation">Neurology</p>
                         <img className="slider-img" src={img5} alt="" />
                     </div>
                     <div className="slider-container">
                         <h3 className="slider-title">Dr. Arthur Reese Abright</h3>
-                        <p className="text-center text-secondary">Dermotology & Cosmetology</p>
+                        <p className="text-center text-secondary designation">Cosmetology</p>
                         <img className="slider-img" src={img6} alt="" />
                     </div>
 

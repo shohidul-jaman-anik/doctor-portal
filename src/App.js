@@ -33,17 +33,26 @@ function App() {
             <Appointment></Appointment>
           </RequireAuth>}>
         </Route>
+
+        <Route path='/myAppointment' element={
+          <RequireAuth>
+            <MyAppointments></MyAppointments>
+          </RequireAuth>}>
+        </Route>
+        <Route path='payment/:id' element={
+          <RequireAuth>
+            <Payment></Payment>
+          </RequireAuth>}>
+        </Route>
+
         <Route path='dashboard' element={
           <RequireAuth>
             <Dashboard></Dashboard>
           </RequireAuth>}>
-          <Route index element={<MyAppointments></MyAppointments>}></Route>
           <Route path='addDoctor' element={<AddDoctor></AddDoctor>}></Route>
-          <Route path='allUsers' element={<RequireAdmin>
+          <Route index path='allUsers' element={<RequireAdmin>
             <AllUsers></AllUsers>
           </RequireAdmin>}></Route>
-          <Route path='payment/:id' element={<Payment></Payment>}></Route>
-       
         </Route>
 
         <Route path='/reviews' element={<AddReview></AddReview>}></Route>
