@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Pages/Shared/Navbar/Navbar';
-import About from './Pages/About/About';
 import Home from './Pages/Home/Home/Home';
 import ScrollToTop from 'react-scroll-to-top';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -14,7 +13,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyAppointments from './Pages/Dashboard/MyAppointments/MyAppointments';
-import MyReview from './Pages/Dashboard/MyReview/MyReview';
 import AddDoctor from './Pages/Dashboard/AddDoctor/AddDoctor';
 import AllUsers from './Pages/Dashboard/AllUsers/AllUsers';
 import RequireAdmin from './Pages/Form/RequireAdmin/RequireAdmin';
@@ -29,7 +27,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/about' element={<About></About>}></Route>
         <Route path='/appointment' element={
           <RequireAuth>
             <Appointment></Appointment>
@@ -44,7 +41,6 @@ function App() {
           <Route path='allUsers' element={<RequireAdmin>
             <AllUsers></AllUsers>
           </RequireAdmin>}></Route>
-          <Route path='review' element={<MyReview></MyReview>}></Route>
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
        
         </Route>

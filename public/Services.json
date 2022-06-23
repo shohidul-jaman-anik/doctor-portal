@@ -1,6 +1,6 @@
 [
   {
-    "name": "Teeth Orthodontics",
+    "name": "General Surgery",
     "price": 50,
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "name": "Cosmetic Dentistry",
+    "name": "Orthopedics & Joint Replacement",
     "price": 80,
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "name": "Teeth Cleaning",
+    "name": "Gynecologist",
     "price": 100,
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -66,7 +66,7 @@
     ]
   },
   {
-    "name": "Cavity Protection",
+    "name": "Neurology & Neurosurgery",
     "price": 80,
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -88,7 +88,7 @@
     ]
   },
   {
-    "name": "Pediatric Dental",
+    "name": "Dental",
     "price": 100,
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -110,7 +110,7 @@
     ]
   },
   {
-    "name": "Oral Surgery",
+    "name": "Dermotology & Cosmetology",
     "price": 0,
     "slots": [
       "08.00 AM - 08.30 AM",

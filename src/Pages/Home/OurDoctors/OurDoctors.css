@@ -1,0 +1,59 @@
+.slider-img {
+    width: 100%;
+}
+
+.slider-title {
+    text-align: center;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.slider-container {
+    max-width: 100%;
+}
+
+.main-title {
+    /* color: #ed563b; */
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem;
+    margin-left: 9rem;
+}
+
+.slick-arrow {
+    color: black;
+
+}
+
+.slick-prev {
+    z-index: 100;
+    left: 20px !important;
+}
+
+.slick-next {
+    z-index: 100;
+    right: 20px !important;
+}
+.title-contaier {
+    display: flex;
+    margin-left: 33%;
+    margin-bottom: 1rem;
+}
+
+
+@media only screen and (max-width: 570px) {
+    .slider-title {
+        font-size: xx-small;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+
+    }
+
+    .title-contaier {
+        display: flex;
+        margin-left: 13%;
+    }
+}
