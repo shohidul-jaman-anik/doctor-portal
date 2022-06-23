@@ -24,11 +24,13 @@ const Navbar = () => {
 
         <li><Link to="/contact" className='text-white'>Contact</Link></li>
         <li>{user ?
-            <button onClick={logout} 
-            className="btn btn-ghost text-white">
+            <button onClick={logout}
+                className="btn btn-ghost text-white mt-3">
                 Log Out
             </button>
-            : <Link to="/login" >Login</Link>}
+            : <button className="btn btn-ghost text-white mt-3">
+                <Link to="/login" >Login</Link>
+            </button>}
         </li>
         {/* <li> <DarkMode></DarkMode></li> */}
     </>

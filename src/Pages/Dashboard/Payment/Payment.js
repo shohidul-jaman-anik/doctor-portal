@@ -30,10 +30,17 @@ const Payment = () => {
 
     return (
         <div className='paymentContainer'>
-            <div>
+            <div data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
+
                 <img className='paymentImg' src={paymentImg} alt="" />
+
             </div>
-            <div>
+            <div data-aos="fade-left"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
+
                 <div className="card w-50 max-w-md bg-base-100 shadow-md  my-12">
                     <div className="card-body">
                         <p className="text-success font-bold">Hello,{appointment?.patientName} </p>
@@ -48,6 +55,7 @@ const Payment = () => {
                         </Elements>
                     </div>
                 </div>
+                
             </div>
         </div>
     );
