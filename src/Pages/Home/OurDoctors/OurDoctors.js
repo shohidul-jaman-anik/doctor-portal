@@ -23,11 +23,10 @@ export default class PauseOnHover extends Component {
             slidesToShow: 3,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 1500,
-            pauseOnHover: true
-        };
+            autoplaySpeed: 2000,
+          };
         return (
-            <div className="my-16 container">
+            <div className="my-16  bg-slate-500 w-auto py-16 pb-28">
                 <div className="title-contaier">
                     <h1>
                         <Typed className="main-title text-primary"
@@ -44,11 +43,14 @@ export default class PauseOnHover extends Component {
                     {/* <div><img src={img} alt="" /></div> */}
                 </div>
 
-                <Slider {...settings}>
+                <Slider {...settings} >
+                    
                     <div className="slider-container">
                         <h3 className="slider-title">Dr. William A. Abdu, M.S.</h3>
                         <p className="text-center text-secondary designation">Dental</p>
                         <img className="slider-img" src={img1} alt="" />
+
+                        {/* <button className="drDetailsBtn font-bold text-white bg-gradient-to-r from-secondary to-primary px-3 mt-2 py-1 rounded-lg flex items-center ml-24">Explore more</button> */}
                     </div>
                     <div className="slider-container">
                         <h3 className="slider-title">Dr. Myles. B. Abbott, M.D</h3>

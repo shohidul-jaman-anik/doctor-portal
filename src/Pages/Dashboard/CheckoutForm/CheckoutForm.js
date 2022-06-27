@@ -9,9 +9,11 @@ const CheckoutForm = ({ appointment }) => {
     const elements = useElements();
     const [cardError, setCardError] = useState('')
     const [success, setSuccess] = useState('')
+    const [transitionId, setTransitionId] = useState('')
     const [clientSecret, setClientSecret] = useState('')
+    const [processing, setProcessing] = useState(false);
 
-    const { price, patient, patientName } = appointment
+    const { _id, price, patient, patientName } = appointment
 
     useEffect(() => {
         fetch('https://afternoon-mesa-24247.herokuapp.com/create-payment-intent', {
@@ -58,6 +60,8 @@ const CheckoutForm = ({ appointment }) => {
         // }
         setCardError(error?.message || '')
         setSuccess('')
+
+        setProcessing(true)
         // Confirm Card Payment
         const { paymentIntent, error: ententError } = await stripe.confirmCardPayment(
             clientSecret,
@@ -66,19 +70,39 @@ const CheckoutForm = ({ appointment }) => {
                     card: card,
                     billing_details: {
                         name: patientName,
-                        Email: patientName,
+                        Email: patient,
                     },
                 },
             },
         );
         if (ententError) {
             setCardError(ententError?.message)
-
+            setProcessing(false)
         }
         else {
             setCardError('')
+            setTransitionId(paymentIntent.id)
             setSuccess('Congrates! your payment is completed')
             console.log(paymentIntent)
+
+
+            //store payment on database
+            const payment = {
+                appointment: _id,
+                transactionId: paymentIntent.id
+            }
+            fetch(`https://afternoon-mesa-24247.herokuapp.com/booking/${_id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(payment)
+            }).then(res => res.json())
+                .then(data => {
+                    setProcessing(false);
+                    console.log(data);
+                })
         }
 
     }
@@ -110,7 +134,10 @@ const CheckoutForm = ({ appointment }) => {
                     cardError && <p className='text-red-500'>{cardError}</p>
                 }
                 {
-                    success && <p className='text-green-500'>{success}</p>
+                    success && <div className='text-green-500'>
+                        <p>{success}</p>
+                        <p>Your Transaction Id : <span className='text-orange-500 font-bold'>{transitionId}</span></p>
+                    </div>
                 }
             </div>
         </div>

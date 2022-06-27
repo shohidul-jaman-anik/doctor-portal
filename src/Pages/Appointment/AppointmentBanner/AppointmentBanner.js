@@ -13,15 +13,9 @@ const AppointmentBanner = ({ date, setDate }) => {
                         src={appointment} className="max-w-sm rounded-lg shadow-2xl" alt=''
 
                         data-aos="fade-left"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine"
-                        data-aos-duration="800"
                     />
 
-                    <div data-aos="fade-right"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine"
-                        data-aos-duration="800">
+                    <div data-aos="fade-right">
 
                         <DayPicker mode="single"
                             selected={date}

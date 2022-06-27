@@ -46,10 +46,12 @@ function App() {
         </Route>
 
         <Route path='dashboard' element={
-          <RequireAuth>
+          <RequireAdmin>
             <Dashboard></Dashboard>
-          </RequireAuth>}>
-          <Route path='addDoctor' element={<AddDoctor></AddDoctor>}></Route>
+          </RequireAdmin>}>
+          <Route path='addDoctor' element={<RequireAdmin>
+            <AddDoctor></AddDoctor>
+          </RequireAdmin>}></Route>
           <Route index path='allUsers' element={<RequireAdmin>
             <AllUsers></AllUsers>
           </RequireAdmin>}></Route>

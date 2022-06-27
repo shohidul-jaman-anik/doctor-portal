@@ -1,24 +1,20 @@
-.slider-img {
-    width: 100%;
-}
 
 .slider-title {
     text-align: center;
     font-size: x-large;
     font-weight: 600;
+    color: white;
 }
 
-.slider-container {
+/* .slider-container {
     max-width: 100%;
-}
+} */
 
 .main-title {
-    /* color: #ed563b; */
     text-align: center;
-    margin-bottom: 1rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 2rem;
-    margin-left: 9rem;
+    margin: 0%;
 }
 
 .slick-arrow {
@@ -39,6 +35,10 @@
     display: flex;
     margin-left: 33%;
     margin-bottom: 1rem;
+}
+
+.drDetailsBtn{
+    background-color: ;
 }
 
 
