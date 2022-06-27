@@ -1,6 +1,6 @@
 [
   {
-    "name": "General Surgery",
+    "name": "General Medicine",
     "price": 50,
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -22,8 +22,30 @@
     ]
   },
   {
-    "name": "Orthopedics & Joint Replacement",
+    "name": "Physiotherapy",
     "price": 80,
+    "slots": [
+      "08.00 AM - 08.30 AM",
+      "08.30 AM - 09.00 AM",
+      "09.00 AM - 9.30 AM",
+      "09.30 AM - 10.00 AM",
+      "10.00 AM - 10.30 AM",
+      "10.30 AM - 11.00 AM",
+      "11.00 AM - 11.30 AM",
+      "11.30 AM - 12.00 AM",
+      "1.00 PM - 1.30 PM",
+      "1.30 PM - 2.00 PM",
+      "2.00 PM - 2.30 PM",
+      "2.30 PM - 3.00 PM",
+      "3.00 PM - 3.30 PM",
+      "3.30 PM - 4.00 PM",
+      "4.00 PM - 4.30 PM",
+      "4.30 PM - 5.00 PM"
+    ]
+  },
+  {
+    "name": "General Surgery",
+    "price": 100,
     "slots": [
       "08.00 AM - 08.30 AM",
       "08.30 AM - 09.00 AM",
@@ -45,28 +67,6 @@
   },
   {
     "name": "Gynecologist",
-    "price": 100,
-    "slots": [
-      "08.00 AM - 08.30 AM",
-      "08.30 AM - 09.00 AM",
-      "09.00 AM - 9.30 AM",
-      "09.30 AM - 10.00 AM",
-      "10.00 AM - 10.30 AM",
-      "10.30 AM - 11.00 AM",
-      "11.00 AM - 11.30 AM",
-      "11.30 AM - 12.00 AM",
-      "1.00 PM - 1.30 PM",
-      "1.30 PM - 2.00 PM",
-      "2.00 PM - 2.30 PM",
-      "2.30 PM - 3.00 PM",
-      "3.00 PM - 3.30 PM",
-      "3.30 PM - 4.00 PM",
-      "4.00 PM - 4.30 PM",
-      "4.30 PM - 5.00 PM"
-    ]
-  },
-  {
-    "name": "Neurology & Neurosurgery",
     "price": 80,
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -88,7 +88,7 @@
     ]
   },
   {
-    "name": "Dental",
+    "name": "Dermotology & Cosmetology",
     "price": 100,
     "slots": [
       "08.00 AM - 08.30 AM",
@@ -110,7 +110,7 @@
     ]
   },
   {
-    "name": "Dermotology & Cosmetology",
+    "name": "Dental treatments",
     "price": 0,
     "slots": [
       "08.00 AM - 08.30 AM",

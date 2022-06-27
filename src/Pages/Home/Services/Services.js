@@ -12,20 +12,20 @@ const Services = () => {
     const services = [
         {
             _id: 1,
-            name: 'General Medicine & Infectious Disease Unit',
+            name: 'General Medicine ',
             description: 'This field of medicine deals with non-surgical treatment of diseases by diagnosis through study and management with medication.',
             img: medicine,
         },
         {
             _id: 2,
-            name: 'Physiotherapy & Rehabilitation Center',
+            name: 'Physiotherapy',
             description: 'Physiotherapy is a health care profession which assists people to restore, maintain and maximize their strength, function, movement, and overall well-being.',
             img: Phiseotherapy,
         },
         {
             _id: 3,
             name: 'General Surgery',
-            description: "Doctor portal is Best Hospital For General Surgery In Dhaka. At least a five-year general medical procedure residency should be finished.That's why we are best over-all.",
+            description: "Doctor portal is Best Hospital For General Surgery In Dhaka. At least a five-year general medical procedure residency should be finished.",
             img: surgery,
         },
         {
@@ -36,8 +36,8 @@ const Services = () => {
         },
         {
             _id: 5,
-            name: 'Urology',
-            description: 'The urinary and reproductive tracts are closely linked, and disorders of one often affect the other. Thus a major spectrum of the conditions managed in urology exists  genitourinary disorders.',
+            name: 'Dermotology & Cosmetology',
+            description: 'Healthy skin and beautiful appearance symbolise health and self-nurture and gives a sense of confidence. Being the largest organ of body, skin deserves  to sustain optimal health.',
             img: urology,
         },
         {
