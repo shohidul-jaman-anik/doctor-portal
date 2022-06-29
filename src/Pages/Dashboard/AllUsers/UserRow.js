@@ -2,9 +2,10 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const UserRow = ({ user, index, setUser, refetch }) => {
+    const { email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`https://afternoon-mesa-24247.herokuapp.com/user/admin/${user.email}`, {
+        fetch(`https://afternoon-mesa-24247.herokuapp.com/user/admin/${email}`, {
             method: "PUT",
             authorization: `Bearer ${localStorage.getItem("accessToken")}`
         })
@@ -16,7 +17,6 @@ const UserRow = ({ user, index, setUser, refetch }) => {
 
             })
     }
-
 
     const handleDelete = id => {
         console.log(id)
@@ -47,7 +47,7 @@ const UserRow = ({ user, index, setUser, refetch }) => {
         <tr>
             <th>{index + 1}</th>
             <td>{user.email}</td>
-            <td>{user.role !== "admin" && <button onClick={makeAdmin} className="btn btn-xs">Make Admin👨‍🎓</button>}</td>
+            <td>{role !== "admin" && <button onClick={makeAdmin} className="btn btn-xs">Make Admin👨‍🎓</button>}</td>
             <td><button onClick={() => handleDelete(user._id)} className="btn btn-xs"> Remove User❌</button> </td>
         </tr>
 
