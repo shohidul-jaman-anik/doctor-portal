@@ -12,22 +12,22 @@ const Reviews = () => {
     const reviews = [
         {
             _id: 1,
-            name: 'Harry willium',
+            name: 'Emma',
             description: 'Best family hospital ever. We are treated like family. You are not just a number. Amazing staff, they do anything and everything to help you and get you the best care. We love this hospital and office staff!!!',
-            img: person1,
+            img: "https://i.ibb.co/HTdz8VX/pexels-photo-1181686.jpg",
             address: 'Delhi'
         },
         {
             _id: 2,
-            name: 'willium',
+            name: 'Oliver',
             description: 'The wait times are relatively short (usually 15 minutes maximum). The doctor and nurse practitioner are so understanding. We’ve never had an issue with either of them. Office staff is great too – very friendly and professional!',
-            img: person2,
+            img: "https://i.ibb.co/VJbwWKm/pexels-photo-2112728.webp",
             address: 'Dhaka'
         },
         {
             _id: 3,
             name: 'Harry willium',
-            description: ' I have been with  Doctor portal, now for three years. Doctor portal, is always professional and compassionate. They are relates well to people and takes time to listen. They are good at building trust with his patients.',
+            description: ' I have been with  Health Solution, now for three years. Health Solution, is always professional and compassionate. They are relates well to people and takes time to listen. They are good at building trust with his patients.',
             img: person3,
             address: 'California'
         },
@@ -52,7 +52,7 @@ const Reviews = () => {
                 }
                 <PrimaryButton >
                     <Link to="/reviews">Add Review</Link>
-                    
+
                 </PrimaryButton>
             </div>
         </div>

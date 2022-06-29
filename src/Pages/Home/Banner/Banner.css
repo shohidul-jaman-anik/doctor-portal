@@ -1,23 +1,14 @@
 .bannerImg{
-    background-image: url('../../../assets/Home/doctorBanner.png');
+    background-image: url('../../../assets/Doctors/banner.jpg');
     padding: 12rem 5rem;
     background-color: black;
-    top: 0%;
-    left: 0%;
-    right: 0%;
-    bottom: 0%;
+    background-attachment: fixed;
+    padding-right: 17rem;
 }
 
 @media only screen and (max-width: 600px) {
     .bannerImg{
-        background-image: url('../../../assets/Home/doctorBanner.png');
-        padding: 0.5rem 0.2rem;
-        background-color: black;
-        top: 0%;
-        left: 0%;
-        right: 0%;
-        bottom: 0%;
-        /* background-attachment: fixed; */
+        padding: 2rem 1rem;
     }
     .bannerDescription h1{
        font-size: large;

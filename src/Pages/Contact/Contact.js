@@ -1,31 +1,22 @@
 import React from 'react';
 import ContactUs from '../Home/ContactUs/ContactUs';
-import img1 from "../../assets/Doctors/img4.jpg"
-
+import './Contact.css'
 
 const Contact = () => {
     return (
         <div>
-            <div className='flex my-10'>
+            <div class="contactInfo" >
                 <div>
-                    <ol className="border-l border-gray-300 col-span-5">
+                    <ol className="">
                         <li>
-                            <div className="flex flex-start items-center pt-3">
-                                <div className="bg-gray-300 w-2 h-2 rounded-full -ml-1 mr-3"></div>
-                                <p className="text-gray-500 text-sm">01.07.2021</p>
-                            </div>
                             <div className="mt-0.5 ml-4 mb-6">
-                                <h4 className="text-gray-800 font-semibold text-xl mb-1.5">Doctor Portal</h4>
-                                <p className="text-gray-500 mb-3">Plot No. 2, Sector-8, Phase - II, Near Rajiv Gandi Bridge Nerul (W), Navi Jatrabari, Dhaka.</p>
+                                <h4 className="text-secondary font-semibold text-xl mb-1.5">Health Solution</h4>
+                                <p className="text-gray-500 mb-3">Plot No. 2, Sector-8, Jatrabari, Dhaka.</p>
                             </div>
                         </li>
                         <li>
-                            <div className="flex flex-start items-center pt-2">
-                                <div className="bg-gray-300 w-2 h-2 rounded-full -ml-1 mr-3"></div>
-                                <p className="text-gray-500 text-sm">13.09.2021</p>
-                            </div>
                             <div className="mt-0.5 ml-4 mb-6">
-                                <h4 className="text-gray-800 font-semibold text-xl mb-1.5">Contact Info</h4>
+                                <h4 className="text-secondary font-semibold text-xl mb-1.5">Contact Info</h4>
                                 <h3 className="text-gray-500 mb-3">
                                     Tel : 82874349##
                                 </h3>
@@ -35,21 +26,17 @@ const Contact = () => {
                             </div>
                         </li>
                         <li>
-                            <div className="flex flex-start items-center pt-2">
-                                <div className="bg-gray-300 w-2 h-2 rounded-full -ml-1 mr-3"></div>
-                                <p className="text-gray-500 text-sm">25.11.2021</p>
-                            </div>
                             <div className="mt-0.5 ml-4 pb-5">
-                                <h4 className="text-gray-800 font-semibold text-xl mb-1.5">Gmail</h4>
+                                <h4 className="text-secondary font-semibold text-xl mb-1.5">Gmail</h4>
                                 <p className="text-gray-500 mb-3">
-                                    doctorportal@gmail.com
+                                    Health Solution@gmail.com
                                 </p>
                             </div>
                         </li>
                     </ol>
                 </div>
-                <div className='col-span-7'>
-                    <img src={img1} alt="" />
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.0441802218747!2d90.43218551475132!3d23.710116284609253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9cbc59133f5%3A0x1496634384d98b5c!2sJatrabari%20Bus%20Stop!5e0!3m2!1sen!2sbd!4v1656486154606!5m2!1sen!2sbd" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 

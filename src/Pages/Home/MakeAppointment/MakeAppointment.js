@@ -1,14 +1,15 @@
 import React from 'react';
 import PrimaryButton from '../../Shared/PrimaryButton/PrimaryButton';
 import appointment from '../../../assets/images/appointment.png'
-import doctor from '../../../assets/images/doctor.png'
+// import doctor from '../../../assets/images/doctor.png'
+import doctor from '../../../assets/Doctors/doctor1.png'
 import { Link } from 'react-router-dom';
 
 const MakeAppointment = () => {
     return (
         <section style={{
             background: `url(${appointment})`
-        }} className='flex items-center mt-16 ' >
+        }} className='flex items-center mt-16' >
             <div
                 data-aos="fade-right"
                 data-aos-offset="300"
@@ -16,7 +17,7 @@ const MakeAppointment = () => {
                 data-aos-duration="800"
 
                 className='flex-1 hidden lg:block'>
-                <img className='mt-[-100px]' src={doctor} alt="" />
+                <img className='mt-[-130px]' src={doctor} alt="" />
             </div>
             <div
                 data-aos="fade-left"

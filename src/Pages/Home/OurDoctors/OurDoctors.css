@@ -11,10 +11,11 @@
 } */
 
 .main-title {
-    text-align: center;
+  
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 2rem;
-    margin: 0%;
+    margin-left: 5rem;
+
 }
 
 .slick-arrow {

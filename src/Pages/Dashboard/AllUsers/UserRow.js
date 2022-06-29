@@ -10,6 +10,7 @@ const UserRow = ({ user, index, setUser, refetch }) => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 refetch()
                 toast.success("Make admin sucessfully")
 

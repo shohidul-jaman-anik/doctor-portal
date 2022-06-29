@@ -25,7 +25,7 @@ const Services = () => {
         {
             _id: 3,
             name: 'General Surgery',
-            description: "Doctor portal is Best Hospital For General Surgery In Dhaka. At least a five-year general medical procedure residency should be finished.",
+            description: "Health Solution is Best Hospital For General Surgery In Dhaka. At least a five-year general medical procedure residency should be finished.",
             img: surgery,
         },
         {

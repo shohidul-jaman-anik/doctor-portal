@@ -18,8 +18,8 @@ const AboutUs = () => {
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="200"
             >
-                <h2 className="card-title">Welcome to Doctor Portal</h2>
-                <p>Established in 2002, Doctor Portal is an advanced tertiary care, multi-specialty hospital equipped with 54 beds and spread over an area of 15000 sq. ft. situated at the prime location in Plot No. 2, Jatrabari, Dhaka. The Hospital is augmented with the state-of-the-art-facilities that facilitate speedier diagnosis and efficient treatment. Our team of highly dedicated professionals works in an environment that enables them to deliver the highest quality of healthcare services.</p>
+                <h2 className="card-title">Welcome to <span className='text-secondary'>Health Solution</span></h2>
+                <p>Established in 2002, Health Solution is an advanced tertiary care, multi-specialty hospital equipped with 54 beds and spread over an area of 15000 sq. ft. situated at the prime location in Plot No. 2, Jatrabari, Dhaka. The Hospital is augmented with the state-of-the-art-facilities that facilitate speedier diagnosis and efficient treatment. Our team of highly dedicated professionals works in an environment that enables them to deliver the highest quality of healthcare services.</p>
             </div>
         </div>
     );

@@ -19,14 +19,14 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-const  [token]=useToken(user||gUser)
+    const [token] = useToken(user || gUser)
 
     let signInError;
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    useEffect( () =>{
+    useEffect(() => {
         if (token) {
             navigate(from, { replace: true });
         }
@@ -36,8 +36,8 @@ const  [token]=useToken(user||gUser)
         return <Loading></Loading>
     }
 
-    if(error || gError){
-        signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
+    if (error || gError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 
     const onSubmit = data => {
@@ -103,7 +103,7 @@ const  [token]=useToken(user||gUser)
                         {signInError}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
-                    <p><small>New to Doctors Portal <Link className='text-primary' to="/register">Create New Account</Link></small></p>
+                    <p><small>New to Health Solution ? <Link className='text-primary' to="/register">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}

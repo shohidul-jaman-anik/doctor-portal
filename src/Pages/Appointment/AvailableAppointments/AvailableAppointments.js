@@ -22,7 +22,7 @@ const AvailableAppointments = ({ date, setDate }) => {
 
     let footer = <p>Please pick a day.</p>;
     if (date) {
-        footer = <p>Available Appointments on {format(date, 'PP')}.</p>;
+        footer = <p className='text-secondary font-bold'>Available Appointments on <span className='text-red-500'>{format(date, 'PP')}.</span></p>;
     }
 
     // useEffect(() => {
@@ -33,7 +33,7 @@ const AvailableAppointments = ({ date, setDate }) => {
     return (
         <div>
             <div>
-                <p className='text-xl text-center mb-12'>You have selected <span className='text-secondary font-bold'>{footer}</span>.</p>
+                <p className='text-xl text-center mb-12'>You have selected <span >{footer}</span>.</p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {

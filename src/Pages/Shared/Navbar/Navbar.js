@@ -6,6 +6,7 @@ import auth from '../../../firebase.init';
 import useAdmin from '../../Hook/useAdmin/useAdmin';
 // import DarkMode from '../DarkMode/DarkMode';
 import './Navbar.css'
+import headerLogo from '../../../assets/icons/logo1-removebg-preview.png'
 
 const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -38,7 +39,7 @@ const Navbar = () => {
     </>
     return (
 
-        <div className="navbar bg-slate-800">
+        <div className="navbar bg-slate-800 text-white sticky-top">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -48,7 +49,10 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl text-white">Doctor Portal</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl text-secondary flex">
+                    <img src={headerLogo} className="h-14 w-16" alt="" />
+                    <p>Health Solution</p>
+                </Link>
                 <div className=" hidden lg:flex ">
                     <ul className="menu menu-horizontal">
                         {menuItems}
@@ -57,7 +61,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </label>
             </div>
         </div>

@@ -1,0 +1,15 @@
+.contactInfo{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 0.8rem;
+    margin: 3rem 0rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .contactInfo{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        
+    }
+}
+

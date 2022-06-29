@@ -29,9 +29,6 @@ const ContactUs = () => {
             backgroundRepeat: 'no-repeat',
         }}
             data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="300"
-            data-aos-offset="0"
         >
             <div className='text-center '>
                 <h3 className='text-primary font-bold '>Contact</h3>
