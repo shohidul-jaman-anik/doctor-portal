@@ -39,8 +39,6 @@ const UserRow = ({ user, index, setUser, refetch }) => {
                 })
         }
     }
-
-
     return (
 
         <tr>
@@ -49,8 +47,9 @@ const UserRow = ({ user, index, setUser, refetch }) => {
             <td>{role !== "admin" && <button onClick={makeAdmin} className="btn btn-xs">Make Admin👨‍🎓</button>}</td>
             <td><button onClick={() => handleDelete(user._id)} className="btn btn-xs"> Remove User❌</button> </td>
         </tr>
-
     );
 };
 
 export default UserRow;
+
+
