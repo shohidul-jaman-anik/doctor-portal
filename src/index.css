@@ -17,3 +17,14 @@ code {
 *{
   font-family: Merriweather, serif Arial, Helvetica, sans-serif;
 }
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+@media only screen and (max-width:600px) {
+ html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+}

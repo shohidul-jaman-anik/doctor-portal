@@ -1,24 +1,25 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useQuery } from 'react-query';
-import Loading from '../../Shared/Loading/Loading';
 import { toast } from 'react-toastify';
+import Loading from '../../Shared/Loading/Loading';
 
 
 const AddDoctor = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const { data: services, isLoading } = useQuery('service', () => fetch('https://afternoon-mesa-24247.herokuapp.com/service').then(res => res.json()))
+    const { data: services, isLoading } = useQuery('service', () => fetch('https://doctor-portal-server-wxo1.onrender.com/service').then(res => res.json()))
 
     const imgStoragekey = 'eb7029e2c67ae133bd4c4ba548af171d'
 
 
     const onSubmit = async (data) => {
+
+        const url = `https://api.imgbb.com/1/upload?key=${imgStoragekey}`;
+
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
-
-        const url = `https://api.imgbb.com/1/upload?key=${imgStoragekey}`;
 
         fetch(url, {
             method: 'POST',
@@ -36,7 +37,7 @@ const AddDoctor = () => {
                         img: img
                     }
                     // send to your database 
-                    fetch('https://afternoon-mesa-24247.herokuapp.com/doctor', {
+                    fetch('https://doctor-portal-server-wxo1.onrender.com/doctor', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

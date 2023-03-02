@@ -1,6 +1,4 @@
-import { loadStripe } from '@stripe/stripe-js';
-import React, { useEffect, useState } from 'react';
-
+import { useEffect, useState } from 'react';
 
 
 const useToken = user => {
@@ -9,7 +7,7 @@ const useToken = user => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(`https://afternoon-mesa-24247.herokuapp.com/user/${email}`, {
+            fetch(`https://doctor-portal-server-wxo1.onrender.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -18,7 +16,7 @@ const useToken = user => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log('data inside useToken', data);
+                    // console.log('data inside useToken', data);
                     const accessToken = data.token;
                     localStorage.setItem('accessToken', accessToken);
                     setToken(accessToken);
@@ -30,5 +28,4 @@ const useToken = user => {
 }
 
 export default useToken;
-
 

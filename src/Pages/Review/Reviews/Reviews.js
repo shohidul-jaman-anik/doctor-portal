@@ -1,8 +1,8 @@
 import React from 'react';
-import './Reviews.css';
-import Review from '../Review/Review';
-import { useQuery } from 'react-query'
+import { useQuery } from 'react-query';
 import Loading from '../../Shared/Loading/Loading';
+import Review from '../Review/Review';
+import './Reviews.css';
 const Reviews = () => {
     // const [reviews, setReviews] = useState([])
     // useEffect(() => {
@@ -11,7 +11,7 @@ const Reviews = () => {
     //         .then(data => setReviews(data))
     // }, [reviews]);
 
-    const { data: reviews, isLoading, error, data } = useQuery("review", () => fetch('https://afternoon-mesa-24247.herokuapp.com/reviews')
+    const { data: reviews, isLoading, error, data } = useQuery("review", () => fetch('https://doctor-portal-server-wxo1.onrender.com/reviews')
         .then(res => res.json()))
 
     if (isLoading) {

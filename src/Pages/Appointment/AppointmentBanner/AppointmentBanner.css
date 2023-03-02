@@ -3,3 +3,7 @@
     font-size: 140%; 
     color: red;
   }
+  .calenderImg{
+    height: 26rem;
+    width: 40rem !important;
+  }

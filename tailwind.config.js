@@ -1,4 +1,8 @@
 module.exports = {
+  // mode:"jit",
+  // purge:[
+  //   "./src/Pages/Appointment/**/*.{html,js}"
+  // ],
   content: ["./src/**/*.{html,js}", './node_modules/tw-elements/dist/js/**/*.js'],
   theme: {
     extend: {},
@@ -14,7 +18,6 @@ module.exports = {
           "base-100": "#ffffff",
         },
       },
-      "dark",
       "cupcake",
     ],
   },

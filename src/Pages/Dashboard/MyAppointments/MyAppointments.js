@@ -1,8 +1,8 @@
 
-import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 
@@ -13,14 +13,14 @@ const MyAppointments = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://afternoon-mesa-24247.herokuapp.com/booking?patient=${user.email}`, {
+            fetch(`https://doctor-portal-server-wxo1.onrender.com/booking?patient=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
                 .then(res => {
-                    console.log('res', res);
+                    // console.log('res', res);
                     if (res.status === 401 || res.status === 403) {
                         signOut(auth);
                         localStorage.removeItem('accessToken');
@@ -43,15 +43,15 @@ const MyAppointments = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://afternoon-mesa-24247.herokuapp.com/booking/${id}`
-            console.log(url)
+            const url = `https://doctor-portal-server-wxo1.onrender.com/booking/${id}`
+            // console.log(url)
             fetch(url, {
                 method: "DELETE",
                 body: JSON.stringify({ id })
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    // console.log(data)
                     const remaining = appointments.filter(p => p._id !== id)
                     setAppointments(remaining)
                 })

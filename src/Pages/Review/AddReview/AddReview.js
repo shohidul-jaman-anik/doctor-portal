@@ -6,20 +6,20 @@ import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import Reviews from '../Reviews/Reviews';
-import './AddReview.css'
+import './AddReview.css';
 
 const AddReview = () => {
-    const [user,loading] = useAuthState(auth);
-  
+    const [user, loading] = useAuthState(auth);
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-    if(loading){
+    if (loading) {
         return <Loading></Loading>
     }
 
     const onSubmit = data => {
-        console.log(data)
-        const url = `https://afternoon-mesa-24247.herokuapp.com/review`
+        // console.log(data)
+        const url = `https://doctor-portal-server-wxo1.onrender.com/review`
         fetch(url, {
             method: "POST",
             headers: {
@@ -119,7 +119,7 @@ const AddReview = () => {
             <div className='clint-review'>
 
                 <Reviews></Reviews>
-                
+
             </div>
         </div>
     );

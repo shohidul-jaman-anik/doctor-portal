@@ -51,7 +51,7 @@ function App() {
             <Dashboard></Dashboard>
           </RequireAdmin>}>
 
-          <Route index path='allUsers' element={<RequireAdmin>
+          <Route index element={<RequireAdmin>
             <AllUsers></AllUsers>
           </RequireAdmin>}></Route>
 

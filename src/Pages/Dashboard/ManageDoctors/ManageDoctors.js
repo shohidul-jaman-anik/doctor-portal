@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Loading from '../../Shared/Loading/Loading';
 import { useQuery } from 'react-query';
-import DoctorRow from './DoctorRow';
+import Loading from '../../Shared/Loading/Loading';
 import DeleteConfirmModal from './DeleteConfirmModal';
+import DoctorRow from './DoctorRow';
 
 const ManageDoctors = () => {
     const [deletingDoctor, setDeletingDoctor] = useState(null);
 
-    const { data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch('https://afternoon-mesa-24247.herokuapp.com/doctors', {
+    const { data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch('https://doctor-portal-server-wxo1.onrender.com/doctors', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

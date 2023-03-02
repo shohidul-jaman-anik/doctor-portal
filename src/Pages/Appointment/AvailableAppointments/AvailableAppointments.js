@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
-import React, { useEffect, useState } from 'react';
-import BookingModal from '../BookingModal/BookingModal';
-import AvailableAppoinment from '../AvailableAppoinment/AvailableAppoinment';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Shared/Loading/Loading';
+import AvailableAppoinment from '../AvailableAppoinment/AvailableAppoinment';
+import BookingModal from '../BookingModal/BookingModal';
 
 
 const AvailableAppointments = ({ date, setDate }) => {
@@ -12,7 +12,7 @@ const AvailableAppointments = ({ date, setDate }) => {
     const [treatment, setTreatment] = useState(null)
     const formattedDate = format(date, 'PP')
 
-    const { data: services, isLoading, refetch } = useQuery(['available', formattedDate], () => fetch(`https://afternoon-mesa-24247.herokuapp.com/available?date=${formattedDate}`)
+    const { data: services, isLoading, refetch } = useQuery(['available', formattedDate], () => fetch(`https://doctor-portal-server-wxo1.onrender.com/available?date=${formattedDate}`)
         .then(res => res.json()))
 
     if (isLoading) {
@@ -26,10 +26,11 @@ const AvailableAppointments = ({ date, setDate }) => {
     }
 
     // useEffect(() => {
-    //     fetch(`https://afternoon-mesa-24247.herokuapp.com/service`)
+    //     fetch(`https://doctor-portal-server-wxo1.onrender.com/service`)
     //         .then(res => res.json())
     //         .then(data => setServices(data))
     // }, [formatedDate])
+
     return (
         <div>
             <div>

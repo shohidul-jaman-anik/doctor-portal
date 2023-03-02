@@ -5,26 +5,25 @@ const UserRow = ({ user, index, setUser, refetch }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`https://afternoon-mesa-24247.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://doctor-portal-server-wxo1.onrender.com/user/admin/${email}`, {
             method: "PUT",
             authorization: `Bearer ${localStorage.getItem("accessToken")}`
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 refetch()
                 toast.success("Make admin sucessfully")
-
             })
     }
 
     const handleDelete = id => {
-        console.log(id)
+        // console.log(id)
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://afternoon-mesa-24247.herokuapp.com/user/${id}`
-            console.log(url)
+            const url = `https://doctor-portal-server-wxo1.onrender.com/user/${id}`
+            // console.log(url)
             fetch(url, {
                 method: "DELETE",
 

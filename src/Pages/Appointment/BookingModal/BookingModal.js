@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { format } from 'date-fns';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -6,9 +5,10 @@ import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 
 const BookingModal = ({ treatment, setTreatment, date, refetch }) => {
-    const { _id, name, slots ,price} = treatment;
+    const { _id, name, slots, price } = treatment;
     const [user, loading, error] = useAuthState(auth);
     const formattedDate = format(date, 'PP')
+
     const handleForm = event => {
         event.preventDefault()
         const slot = event.target.slot.value;
@@ -31,9 +31,9 @@ const BookingModal = ({ treatment, setTreatment, date, refetch }) => {
             patientName: user.displayName,
             phone: event.target.phone.value
         }
-        console.log(BookingData)
+        // console.log(BookingData)
 
-        const url = "https://afternoon-mesa-24247.herokuapp.com/booking"
+        const url = "https://doctor-portal-server-wxo1.onrender.com/booking"
         fetch(url, {
             method: "POST",
             headers: {
@@ -43,7 +43,7 @@ const BookingModal = ({ treatment, setTreatment, date, refetch }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data.success) {
                     toast(`Appointment is set , ${formattedDate} at ${slot}`)
                 }

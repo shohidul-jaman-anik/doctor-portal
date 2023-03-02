@@ -1,7 +1,5 @@
-import React from 'react';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import React, { useEffect, useState } from 'react';
 
 const CheckoutForm = ({ appointment }) => {
     const stripe = useStripe();
@@ -12,10 +10,10 @@ const CheckoutForm = ({ appointment }) => {
     const [clientSecret, setClientSecret] = useState('')
     const [processing, setProcessing] = useState(false)
 
-    const {_id, price, patientName, patient } = appointment
+    const { _id, price, patientName, patient } = appointment
 
     useEffect(() => {
-        fetch('https://afternoon-mesa-24247.herokuapp.com/create-payment-intent', {
+        fetch('https://doctor-portal-server-wxo1.onrender.com/create-payment-intent', {
             method: "POST",
             headers: {
                 'content-type': "application/json",
@@ -30,7 +28,6 @@ const CheckoutForm = ({ appointment }) => {
                     setClientSecret(data.clientSecret)
                 }
             })
-
     }, [price])
 
 
@@ -89,18 +86,18 @@ const CheckoutForm = ({ appointment }) => {
                 appointment: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://afternoon-mesa-24247.herokuapp.com/booking/${_id}`, {
+            fetch(`https://doctor-portal-server-wxo1.onrender.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(payment)
-            }).then(res=>res.json())
-            .then(data => {
-                setProcessing(false);
-                console.log(data);
-            })
+            }).then(res => res.json())
+                .then(data => {
+                    setProcessing(false);
+                    // console.log(data);
+                })
         }
 
     }

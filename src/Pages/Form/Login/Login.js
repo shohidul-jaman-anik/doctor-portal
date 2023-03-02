@@ -1,10 +1,11 @@
 
-import React, { useEffect } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import React, { useEffect, useState } from 'react';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 // import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 // import Loading from '../Shared/Loading';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import useToken from '../../Hook/useToken/useToken';
 import Loading from '../../Shared/Loading/Loading';
@@ -19,12 +20,39 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    // Reset password
+    const [resetEmail, setResetEmail] = useState('')
+
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
+        auth
+    );
+
+
+    const [userEmail] = useAuthState(auth);
+
     const [token] = useToken(user || gUser)
 
     let signInError;
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
+
+    const onSubmit = (data) => {
+        setResetEmail(data.email)
+        signInWithEmailAndPassword(data.email, data.password)
+
+    };
+
+    const handleResetPass = async user => {
+
+        if (resetEmail) {
+            await sendPasswordResetEmail(resetEmail);
+            toast.success('Sent email');
+        }
+        else {
+            toast.error('Please Enter Your Email')
+        }
+    }
 
     useEffect(() => {
         if (token) {
@@ -36,13 +64,11 @@ const Login = () => {
         return <Loading></Loading>
     }
 
-    if (error || gError) {
+    if (error || gError || resetError) {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 
-    const onSubmit = data => {
-        signInWithEmailAndPassword(data.email, data.password);
-    }
+
 
     return (
         <div className='flex h-screen justify-center items-center'>
@@ -104,6 +130,9 @@ const Login = () => {
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
                     <p><small>New to Health Solution ? <Link className='text-primary' to="/register">Create New Account</Link></small></p>
+
+                    <p className='text-center'>Forget Password ? <span onClick={handleResetPass}>Reset Password</span></p>
+
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
